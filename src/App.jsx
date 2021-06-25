@@ -1,13 +1,13 @@
 import "./App.css";
 import { BrowserRouter, Switch, Link, Route } from "react-router-dom";
-import Home from "./components/Home";
-import Statistics from "./components/Statistics";
-import About from "./components/About";
+import Home from "./pages/Home";
+import Statistics from "./pages/Statistics";
+import About from "./pages/About";
 
 function App() {
   return (
     <BrowserRouter>
-      <div className="app-container">
+      <main>
         <nav>
           <ul>
             <li>
@@ -21,7 +21,6 @@ function App() {
             </li>
           </ul>
         </nav>
-
         <Switch>
           <Route exact path="/">
             <Home />
@@ -33,7 +32,7 @@ function App() {
             <About />
           </Route>
         </Switch>
-      </div>
+      </main>
     </BrowserRouter>
   );
 }
