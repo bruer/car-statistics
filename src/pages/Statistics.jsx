@@ -1,26 +1,21 @@
+import Graph from "../components/Graph";
+import Table from "../components/Table";
+
+const people = [
+  { name: "Bob", age: 53 },
+  { name: "Brad", age: 51 },
+  { name: "Betty", age: 67 },
+];
+
 function Statistics() {
   return (
-    <section>
+    <main>
       <h1>Statistics</h1>
-      <table>
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Age</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Bob</td>
-            <td>53</td>
-          </tr>
-          <tr>
-            <td>Brad</td>
-            <td>51</td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
+      <div className="statistics-content">
+        <Table people={people} />
+        <Graph people={people} />
+      </div>
+    </main>
   );
 }
 
