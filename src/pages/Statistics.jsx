@@ -1,19 +1,14 @@
 import Graph from "../components/Graph";
 import Table from "../components/Table";
-
-const people = [
-  { name: "Bob", age: 53 },
-  { name: "Brad", age: 51 },
-  { name: "Betty", age: 67 },
-];
+import { TSLA } from "../utils";
 
 function Statistics() {
   return (
     <main>
-      <h1>Statistics</h1>
+      <h1>TSLA Prices</h1>
       <div className="statistics-content">
-        <Table people={people} />
-        <Graph people={people} />
+        <Graph prices={TSLA} />
+        <Table people={TSLA} />
       </div>
     </main>
   );
