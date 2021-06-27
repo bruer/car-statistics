@@ -1,26 +1,18 @@
-import "./App.css";
-import { BrowserRouter, Switch, Link, Route } from "react-router-dom";
+import "./styles/App.css";
+import "./styles/Header.css";
+import "./styles/Statistics.css";
+
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Home from "./pages/Home";
+import Header from "./components/Header";
 import Statistics from "./pages/Statistics";
 import About from "./pages/About";
 
 function App() {
   return (
     <BrowserRouter>
-      <main>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/statistics">Statistics</Link>
-            </li>
-            <li>
-              <Link to="/about">About Us</Link>
-            </li>
-          </ul>
-        </nav>
+      <div className="app-container">
+        <Header />
         <Switch>
           <Route exact path="/">
             <Home />
@@ -32,7 +24,7 @@ function App() {
             <About />
           </Route>
         </Switch>
-      </main>
+      </div>
     </BrowserRouter>
   );
 }

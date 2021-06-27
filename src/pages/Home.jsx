@@ -2,9 +2,9 @@ import React from "react";
 
 function Home() {
   return (
-    <section>
+    <main>
       <h1>Welcome!</h1>
-    </section>
+    </main>
   );
 }
 
