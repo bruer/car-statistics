@@ -17,19 +17,27 @@ let db = new sqlite3.Database('/Users/jbruer/Development/sqlite/db/car-statistic
     });
   });
 
-  let sql = `SELECT ID id,
+  let sql = `SELECT 
+                  DISTINCT DATE date,
                   MODEL model,
                   PRICE price
             FROM used_car_prices
-            WHERE DATE > ? 
-            ORDER BY ID`;
+            WHERE DATE > ?
+            AND MODEL = 'Model 3' 
+            GROUP BY DATE
+            `;
 
-db.each(sql, ['2021-06-28'], (err, row) => {
+db.each(sql, ["2021-01-01"], (err, row) => {
+    //console.log(`${row.id} ---${row.date} -- ${row.model} -- ${row.price}`);
   if (err) {
     throw err;
   }
-  
-  console.log(`${row.id} ${row.model} - ${row.price}`);
+  let model3_data = {};
+  model3_data[row.date] = row.price;
+  //console.log(`${row.id} ---${row.date} -- ${row.model} -- ${row.price}`);
+  for (const [key, value] of Object.entries(model3_data)) {
+    console.log(key, value);
+  }
 });
   
   db.close((err) => {
