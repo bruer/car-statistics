@@ -1,6 +1,6 @@
 import Graph from "../components/Graph";
 import Table from "../components/Table";
-import { TSLA } from "../utils";
+import { people, TSLA } from "../utils";
 
 function Statistics() {
   return (
@@ -8,7 +8,8 @@ function Statistics() {
       <h1>TSLA Prices</h1>
       <div className="statistics-content">
         <Graph prices={TSLA} />
-        <Table people={TSLA} />
+        <Table data={people} />
+        <Table data={TSLA} />
       </div>
     </main>
   );
