@@ -4,6 +4,12 @@ export const people = [
   { name: "Betty", age: 67 },
 ];
 
+export const peopleTwo = [
+  { name: "Bob", age: 53 },
+  { name: "Brad", age: 51 },
+  { name: "Betty", age: 67 },
+];
+
 export const TSLA = [
   {
     date: "2021-03-26",
