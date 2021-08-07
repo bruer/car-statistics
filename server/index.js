@@ -11,7 +11,7 @@ app.get("/", (req, res) => {
 app.get("/api", (req, res) => {
   // const sql = `SELECT ID as id, Name as name FROM used_car_prices`;
   // const sql = `SELECT id, name, age FROM people`;
-  const sql = `SELECT * FROM people`;
+  const sql = `select ID, DATE, MANUFACTURER, MODEL, NAME, PRICE from used_car_prices LIMIT 5`;
 
   db.all(sql, (err, rows) => {
     if (err) {
