@@ -1,6 +1,5 @@
 const sqlite3 = require("sqlite3").verbose();
 
-// const DB_SOURCE = "C:/Users/datapata/Documents/arbete/projekt/databases/car-statistics.db";
 const DB_SOURCE = "database/car-statistics.db";
 
 const db = new sqlite3.Database(DB_SOURCE, sqlite3.OPEN_READWRITE, (err) => {

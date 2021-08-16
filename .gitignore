@@ -1,5 +1,4 @@
 node_modules/
-.DS_Store
-# car-statistics.db
-# car-statistics-small.db
 *.db
+.vscode
+.DS_Store
